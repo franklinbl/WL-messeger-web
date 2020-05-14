@@ -1,44 +1,62 @@
 <div class="container">
   <div class="container_title">
-    <p>Iniciar sesión en</p>
-    <p>Wnddows Live Messenger</p>
+    <div class="content">
+      <p>Iniciar sesión en</p>
+      <p>Wnddows Live Messenger</p>
+    </div>
   </div>
 
-  <div class="container_content">
-    <div class="container_icon">
-      <div class="avatarFrameOffline">
-        <img class="icon" src="../../../assets/img/generic_avatar.png" alt="" />
+  <div class="content">
+    <div class="container_content">
+      <div class="container_icon">
+        <div class="avatarFrameOffline">
+          <img
+            class="icon"
+            src="../../../assets/img/generic_avatar.png"
+            alt=""
+          />
+        </div>
       </div>
-    </div>
 
-    <div class="container_form">
-      <input
-        class="entrada"
-        type="text"
-        placeholder="ejemplo555@hotmail.com"
-      /><br />
+      <div class="container_form">
+        <input
+          class="entrada"
+          type="text"
+          placeholder="ejemplo555@hotmail.com"
+        />
 
-      <input class="entrada" type="password" placeholder="Contraseña" />
+        <input class="entrada" type="password" placeholder="Contraseña" />
 
-      <p><a href="#">¿Has olvidado tu contraseña?</a></p>
+        <p><a href="#">¿Has olvidado tu contraseña?</a></p>
 
-      <p>Iniciar sesión como: Disponible</p>
+        <p>
+          Iniciar sesión como:
+          <select name="estadoUsuario">
+            <option value="disponible">Disponible</option>
+            <option value="ocupado" selected>Ocupado</option>
+            <option value="desconectado">Desconectado</option>
+          </select>
+        </p>
 
-      <label
-        ><input type="checkbox" id="" value="" />Recordar mi Id. y
-        contraseña</label
-      ><br />
+        <label
+          ><input type="checkbox" id="" value="" />Recordar mi Id. y
+          contraseña</label
+        >
 
-      <label
-        ><input type="checkbox" id="" value="" />Iniciar sesión
-        automáticamente.</label
-      ><a href="#"> Opciones</a><br />
+        <label>
+          <input type="checkbox" id="" value="" />Iniciar sesión
+          automáticamente.
+          <a href="#"> Opciones</a>
+        </label>
 
-      <button>Iniciar sesión</button>
+        <div class="container_botones">
+          <button class="botones">Iniciar sesión</button>
 
-      <button>Cancelar</button><br />
+          <button class="botones">Cancelar</button>
+        </div>
 
-      ¿No tienes una cuenta Microsoft? <a href="#">Registrarme</a>
+        <p>¿No tienes una cuenta Microsoft? <a href="#">Registrarme</a></p>
+      </div>
     </div>
   </div>
 </div>
