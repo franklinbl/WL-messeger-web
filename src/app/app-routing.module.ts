@@ -5,7 +5,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/auth',
+    redirectTo: 'auth',
     pathMatch: 'full',
   },
   {
@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then(m => m.SettingModule)
   }
 ];
 
