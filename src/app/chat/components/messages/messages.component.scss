@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1.5fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.perfil_usuario_recibe {
+  grid-area: 1 / 1 / 2 / 2;
+  // border: 1px solid black;
+}
+.chat {
+  grid-area: 1 / 2 / 2 / 3;
+  // border: 1px solid black;
+}
+.perfil_usuario_envia {
+  grid-area: 2 / 1 / 3 / 2;
+  // border: 1px solid black;
+}
+.mensaje {
+  grid-area: 2 / 2 / 3 / 3;
+  // border: 1px solid black;
+}
