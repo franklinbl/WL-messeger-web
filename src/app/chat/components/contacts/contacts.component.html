@@ -14,6 +14,34 @@
       />
     </div>
 
-    <div class="lista_usuarios"></div>
+    <div class="lista_usuarios">
+      <div class="disponibles" (click)="dezplegarLista('disponibles')">
+        <div class="estado"></div>
+        <p class="encabezado_listas">Disponibles</p>
+      </div>
+
+      <div class="lista_disponible" *ngIf="listaDisponibles">
+        <p *ngFor="let u of usuarios">
+          <ng-container *ngIf="u.estado == 'disponible'">
+            <p class="contenido_lista_usuarios">{{ u.nombre }}</p>
+          </ng-container>
+        </p>
+      </div>
+
+      <div class="desconectados" (click)="dezplegarLista('desconectados')">
+        <div class="estado"></div>
+        <p class="encabezado_listas">Desconectados</p>
+      </div>
+
+      <div class="lista_desconectados" *ngIf="listaDesconectados">
+        <p *ngFor="let u of usuarios">
+          <ng-container *ngIf="u.estado == 'desconectado'">
+            <p class="contenido_lista_usuarios">{{ u.nombre }}</p>
+          </ng-container>
+        </p>
+      </div>
+
+      <div class="lista_desconectados"></div>
+    </div>
   </div>
 </div>

@@ -15,6 +15,45 @@
   height: 100px;
 }
 
+.disponibles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .estado {
+    width: 8px;
+    height: 8px;
+    border: 1px solid black;
+    background: greenyellow;
+  }
+
+  p {
+    margin: 0 1%;
+  }
+}
+
+.desconectados {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .estado {
+    width: 8px;
+    height: 8px;
+    border: 1px solid black;
+    background: grey;
+  }
+
+  p {
+    margin: 0 1%;
+  }
+}
+
 #buscador_contacto {
   width: 96.5%;
+}
+
+.encabezado_listas,
+.contenido_lista_usuarios {
+  cursor: pointer;
 }

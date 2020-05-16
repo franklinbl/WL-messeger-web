@@ -1,12 +1,16 @@
 .container {
+  width: 100%;
+  height: 100vh;
+
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-columns: 1fr 3.5fr;
+  grid-template-rows: 2fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
 
 .perfil_usuario_recibe {
+  width: 100%;
   grid-area: 1 / 1 / 2 / 2;
   // border: 1px solid black;
 }
@@ -21,4 +25,31 @@
 .mensaje {
   grid-area: 2 / 2 / 3 / 3;
   // border: 1px solid black;
+}
+
+.icon {
+  width: 75%;
+}
+
+.avatarFrameOffline {
+  width: 100%;
+  text-align: center;
+}
+
+#foto_usuairo {
+  margin-top: 10%;
+}
+
+textarea {
+  resize: none;
+  width: 95%;
+  height: 80%;
+}
+
+.acciones_mensajes {
+}
+
+#zumbido {
+  width: 40px;
+  cursor: pointer;
 }
