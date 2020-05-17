@@ -41,11 +41,6 @@
           </tr>
 
           <tr>
-            <td><label for="password_confirm">Confirmar contraseña</label></td>
-            <td><input type="password" id="password_confirm" value="" /></td>
-          </tr>
-
-          <tr>
             <td><label for="nombre">Nombre</label></td>
             <td><input type="text" id="nombre" value="" /></td>
           </tr>
@@ -59,19 +54,21 @@
             <td><label for="pais">País o región:</label></td>
             <td>
               <select name="pais" id="pais">
-                <option value="disponible">Venezuela</option>
+                <option [value]="c.id" *ngFor="let c of countries.data">
+                  {{ c.name }}
+                </option>
               </select>
             </td>
           </tr>
 
-          <tr>
+          <!-- <tr>
             <td><label for="provincia">Provincia:</label></td>
             <td>
               <select name="provincia" id="provincia">
                 <option value="disponible">Lara</option>
               </select>
             </td>
-          </tr>
+          </tr> -->
 
           <tr>
             <td><label for="codigo_postal"> Codigo postal</label></td>

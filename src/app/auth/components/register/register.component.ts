@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from 'src/app/core/services/register/register.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  countries: any[] = [];
+
+  constructor(
+    private registerService: RegisterService
+  ) { }
 
   ngOnInit(): void {
+    this.registerService.getCountires().subscribe(data => {
+      // console.log(data);
+      this.countries = data;
+    })
   }
 
 }
