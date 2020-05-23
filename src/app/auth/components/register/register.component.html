@@ -23,74 +23,104 @@
     </div>
 
     <div class="form">
-      <form action="">
+      <form [formGroup]="form" (ngSubmit)="registrarUsuario()">
         <table>
           <tr>
-            <td><label for="correo"> Correo Electrónico</label></td>
-            <td><input type="mail" id="correo" value="" /></td>
+            <td><label for="username"> Nombre de usuario</label></td>
+            <td>
+              <input
+                (blur)="nombreUsuarioExiste()"
+                formControlName="username"
+                type="text"
+                id="username"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="mail"> Correo Electrónico</label></td>
+            <td>
+              <input
+                (blur)="emailUsuarioExiste()"
+                formControlName="email"
+                type="mail"
+                id="mail"
+              />
+            </td>
           </tr>
 
           <tr>
             <td><label for="password"> Contraseña</label></td>
-            <td><input type="password" id="password" value="" /></td>
+            <td>
+              <input formControlName="password" type="password" id="password" />
+            </td>
           </tr>
 
           <tr>
             <td><label for="password_confirm">Confirmar contraseña</label></td>
-            <td><input type="password" id="password_confirm" value="" /></td>
-          </tr>
-
-          <tr>
-            <td><label for="nombre">Nombre</label></td>
-            <td><input type="text" id="nombre" value="" /></td>
-          </tr>
-
-          <tr>
-            <td><label for="apellido">Apellidos</label></td>
-            <td><input type="text" id="apellido" value="" /></td>
-          </tr>
-
-          <tr>
-            <td><label for="pais">País o región:</label></td>
             <td>
-              <select name="pais" id="pais">
-                <option [value]="c.id" *ngFor="let c of countries.data">
+              <input
+                formControlName="password_confirm"
+                type="password"
+                id="password_confirm"
+                (blur)="confirmasClave()"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="name">Nombre</label></td>
+            <td><input formControlName="name" type="text" id="nombre" /></td>
+          </tr>
+
+          <tr>
+            <td><label for="lastname">Apellido</label></td>
+            <td>
+              <input formControlName="lastName" type="text" id="lastname" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="countrie">País o región:</label></td>
+            <td>
+              <select formControlName="country" name="country" id="country">
+                <option [value]="c._id" *ngFor="let c of countries">
                   {{ c.name }}
                 </option>
               </select>
             </td>
           </tr>
 
-          <!-- <tr>
-            <td><label for="provincia">Provincia:</label></td>
-            <td>
-              <select name="provincia" id="provincia">
-                <option value="disponible">Lara</option>
-              </select>
-            </td>
-          </tr> -->
-
-          <tr>
-            <td><label for="codigo_postal"> Codigo postal</label></td>
-            <td><input type="number" id="codigo_postal" value="" /></td>
-          </tr>
-
           <tr>
             <td><p>Sexo:</p></td>
             <td>
               <div class="radio_buttom">
-                <input type="radio" name="sexo" id="hombre" />
-                <label for="hombre">Hombre</label>
+                <input
+                  formControlName="gender"
+                  checked
+                  type="radio"
+                  value="male"
+                />
+                <label for="male">Hombre</label>
 
-                <input type="radio" name="sexo" id="mujer" />
-                <label for="mujer">Mujer</label>
+                <input formControlName="gender" type="radio" value="famale" />
+                <label for="famale">Mujer</label>
               </div>
             </td>
           </tr>
 
           <tr>
-            <td><label for="nacimiento">Año de nacimiento</label></td>
-            <td><input type="date" id="nacimiento" /></td>
+            <td><label for="birthday">Año de nacimiento</label></td>
+            <td>
+              <input formControlName="birthday" type="date" id="birthday" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button [disabled]="form.invalid" type="submit">Guardar</button>
+            </td>
+            <td></td>
           </tr>
         </table>
       </form>
