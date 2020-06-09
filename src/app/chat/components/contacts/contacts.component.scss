@@ -15,6 +15,22 @@
   height: 100px;
 }
 
+.content_add_user {
+  margin-top: 1%;
+}
+
+.content_ver_solicitudes {
+  border: 1px solid black;
+  position: fixed;
+  background: #fff;
+  padding: 1%;
+  text-align: center;
+}
+
+.botones_solicitudes {
+  width: 50%;
+}
+
 .disponibles {
   display: flex;
   flex-direction: row;

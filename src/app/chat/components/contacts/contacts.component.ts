@@ -3,41 +3,45 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.scss']
+  styleUrls: ['./contacts.component.scss'],
 })
 export class ContactsComponent implements OnInit {
-
   listaDisponibles = false;
   listaDesconectados = false;
+  verSolicitudes = false;
+  enviarSolicitud = false;
 
   usuarios = [
     {
       id: 1,
       nombre: 'franklin',
-      estado: 'disponible'
-    }, {
+      estado: 'disponible',
+    },
+    {
       id: 2,
       nombre: 'miguel',
-      estado: 'disponible'
-    }, {
+      estado: 'disponible',
+    },
+    {
       id: 3,
       nombre: 'alondra',
-      estado: 'desconectado'
-    }, {
+      estado: 'desconectado',
+    },
+    {
       id: 4,
       nombre: 'patricia',
-      estado: 'disponible'
-    }, {
+      estado: 'disponible',
+    },
+    {
       id: 5,
       nombre: 'maria',
-      estado: 'disponible'
-    }
-  ]
+      estado: 'disponible',
+    },
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   dezplegarLista(estado) {
     // console.log(estado)
@@ -52,4 +56,13 @@ export class ContactsComponent implements OnInit {
     }
   }
 
+  dezplegarVerSolicitudes() {
+    this.verSolicitudes = !this.verSolicitudes;
+    this.enviarSolicitud = false;
+  }
+
+  dezplegarEnviarSolicitudes() {
+    this.enviarSolicitud = !this.enviarSolicitud;
+    this.verSolicitudes = false;
+  }
 }

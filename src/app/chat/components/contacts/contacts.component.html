@@ -2,6 +2,26 @@
   <div class="content_encabezado">
     <div class="foto_perfil"></div>
     <div class="daots_usuario"></div>
+
+    <div class="content_add_user">
+      <button class="botones_solicitudes" (click)="dezplegarVerSolicitudes()">
+        Ver solicitudes
+      </button>
+      <button
+        class="botones_solicitudes"
+        (click)="dezplegarEnviarSolicitudes()"
+      >
+        Enviar solicitud
+      </button>
+    </div>
+
+    <div class="content_ver_solicitudes" *ngIf="verSolicitudes">
+      <app-ver-solicitudes></app-ver-solicitudes>
+    </div>
+
+    <div class="content_ver_solicitudes" *ngIf="enviarSolicitud">
+      <app-enviar-solicitud></app-enviar-solicitud>
+    </div>
   </div>
 
   <div class="content_lista_usuarios">
